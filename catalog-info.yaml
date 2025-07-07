@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: uf44v5pvh-nodejs-gitops
+  description: This is GitOps manifest for uf44v5pvh-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=uf44v5pvh-nodejs
+    backstage.io/kubernetes-id: uf44v5pvh-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: uf44v5pvh-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:uf44v5pvh-nodejs
